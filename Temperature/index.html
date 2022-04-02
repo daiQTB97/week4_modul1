@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+
+<body>
+    <script>
+        function Temperature(c) {
+            c = prompt('nhập vào giá trị C')
+            this.c = c;
+            if (this.c < -273) {
+                alert("nhập lại giá trị C")
+            }
+            else{
+
+                this.squareF = function () {
+                    return c / 33.8;
+                }
+                this.squareK = function () {
+                    return c + 273.15;
+                }
+            }
+
+        }
+        let arr = new Temperature();
+        document.write(`đổi độ C sang độ F = ${arr.squareF().toFixed(3)} <br> 
+                        đổi độ C sang độ K = ${arr.squareK()}`)
+    </script>
+</body>
+
+</html>

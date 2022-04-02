@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="idcanvans" width="500" height="300"></canvas><br>
+    <script>        
+        function Rectangle(intx, inty){
+            this.intx = intx;
+            this.inty = inty;
+            this.acreage = function(){
+                return intx*inty;
+            }
+            this.perimete = function(){
+                return 2*(intx+inty);
+            }
+            this.createRectangle = function(){
+                var ctx = document.getElementById("idcanvans").getContext("2d");
+                    ctx.strokeRect(5, 5, this.intx, this.inty);
+            }         
+        }
+        
+        
+        let rect1 = new Rectangle(490, 290);
+        rect1.createRectangle();
+        document.write(` diện tích của hình chữ nhật 1 là ${rect1.acreage()} m2 <br>`);
+        document.write(` chu vi của hình chữ nhật 1 là ${rect1.perimete()} m <br>`);
+        
+
+        let rect2 = new Rectangle(200, 100);
+        rect2.createRectangle();
+        document.write(` diện tích của hình chữ nhật 2 là ${rect2.acreage()} m2 <br>`);
+        document.write(`chu vi của hình chữ nhật 2 là ${rect2.perimete()} m <br>`);
+
+        
+
+
+
+    </script>
+</body>
+</html>

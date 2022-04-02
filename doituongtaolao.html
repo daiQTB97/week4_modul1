@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <!-- <script>
+         function Product(productId,productName,price,quantity){
+            this.productId = productId;
+            this.productName = productName;
+            this.price = price;
+            this.quantity = quantity;
+        }
+       let products = [
+            new Product(1,"Nước Ngọt",10000,10),
+            new Product(2,"Bột giặt",5000,20),
+            new Product(3,"Kẹo",2000,30),
+            new Product(4,"Đường",30000,15),
+            new Product(5,"Sữa",8000,10)         
+        ]
+        let htmls = products.map(function(pro){
+            return `
+                    <tr>
+                        <td>${pro.productId}</td>
+                        <td>${pro.productName}</td>
+                        <td>${pro.price}</td>
+                        <td>${pro.quantity}</td>
+                    </tr>
+            `
+        });
+        document.write(`<table border = '1'>${htmls.join("")}</table>`)
+        
+
+        
+    </script> -->
+    <script>
+        function Product(productId,productName,price,quantity){
+            this.productId = productId;
+            this.productName = productName;
+            this.price = price;
+            this.quantity = quantity;
+        }
+       let products = [
+            new Product(1,"Nước Ngọt",10000,10),
+            new Product(2,"Bột giặt",5000,20),
+            new Product(3,"Kẹo",2000,30),
+            new Product(4,"Đường",30000,15),
+            new Product(5,"Sữa",8000,10)
+        ]
+        let htmls = products.map(function(pro){
+            return `
+                <div style = "width : 15% ;margin-right : 50px; float: left; border: 1px solid black; box-sizing : border-box; padding-left : 20px ">
+                    <p> Mã sản phẩm : ${pro.productId}</p>
+                    <p>Tên sản phẩm : ${pro.productName}</p>
+                    <p>Giá bán : ${pro.price}</p>
+                    <p>Số lượng : ${pro.quantity}</p>
+                    <button style = "width : 100px ; height : 30px; background : green; boder: none">Add card</button>
+                </div>
+                    `
+        });
+        document.write(`<div>${htmls.join("")}</div>`);
+    </script>
+</body>
+</html>
