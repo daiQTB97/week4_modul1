@@ -17,12 +17,12 @@ function Hero(image, top, left, size) {
     }
 
     this.moveDown = function() {
-        this.top += 50
+        this.top += 20
         console.log('down' + this.top)
     }
 }
 
-var hero = new Hero('pikachu.png', 20, 30, 200);
+var hero = new Hero('luffy.jpg', 20, 30, 200);
 
 function start() {
     if (hero.left < window.innerWidth - hero.size) {
