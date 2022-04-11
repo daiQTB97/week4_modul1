@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Rat = function(Rat_name,Rat_weight,Rat_speed,Rat_status){
+            this.Rat_name = Rat_name;
+            this.Rat_weight = Rat_weight;
+            this.Rat_speed = Rat_speed;
+            this.Rat_status = Rat_status;
+            this.mouse_chirping = function(){
+                console.log("Chít Chít");
+            }
+        }
+        let Cat = function(Cat_name,Cat_weight,Cat_max_speed){
+            this.Cat_name = Cat_name;
+            this.Cat_weight = Cat_weight;
+            this.Cat_max_speed = Cat_max_speed;
+            this.meowing_cat = function(){
+                console.log("Meo Meo");
+            }
+            this.catch_the_mouse = function(mouse){
+                if(this.Cat_max_speed > mouse.Rat_speed){
+                    console.log("Bắt chuột thành công");
+                }else {
+                    console.log("Mèo quá chậm không thể bắt được chuột");
+                }
+            }
+            this.eat_rat_meat = function(mouse){
+                if(mouse.Rat_status){
+                    this.Cat_weight += mouse.Rat_weight;
+                    console.log("Mèo đã ăn chuột");
+                }else {
+                    console.log("Chuột đã chết mèo không thể ăn");
+                }
+            }
+        }
+        let rat = new Rat("Jerry",1,20,true);
+        let cat = new Cat("Tom",10,30);
+        cat.meowing_cat();
+        cat.catch_the_mouse(rat);
+        rat.mouse_chirping(rat);
+        cat.eat_rat_meat(rat);
+    </script>
+</body>
+</html>
